@@ -40,7 +40,3 @@ class SignUp extends Component {
 }
 
 export default SignUp;
-
-
-User: username, email, password, profile picture
-Profile: username, profile picture, preferences/interest, friendlist, schedule 
