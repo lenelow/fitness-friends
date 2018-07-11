@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Coda+Caption:800');
+@import url("https://fonts.googleapis.com/css?family=Coda+Caption:800");
 
 body {
-  font-family: 'Coda Caption', sans-serif;
+  font-family: "Coda Caption", sans-serif;
 }
 
 .App {
@@ -9,7 +9,7 @@ body {
 }
 
 .App-header {
-  background-color: #569FBF;
+  background-color: #569fbf;
   height: 10vh;
   padding: 20px;
   color: white;
@@ -18,5 +18,3 @@ body {
 .App-title {
   font-size: 1.5em;
 }
-
-
