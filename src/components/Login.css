@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+
+body {
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.loginInfo {
+    padding: 5px;
+}
+
+.login {
+    margin-bottom: 10px;
+}
+
+.loginButton {
+    width: 60px;
+    height: 25px;
+    margin-top: 5px;
+    border-radius: 5px;
+    background-color: #B1BDAF;
+    background: rgba(177, 189, 175, 0.7);
+}
+
+.loginButton:active {
+    background-color: #737A71;
+}
