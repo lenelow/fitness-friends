@@ -4,23 +4,13 @@ class SignUp extends Component {
   render() {
     return (
       <div>
-        <input type="text" name="username" value="Username" />
-        <input type="password" name="password" value="Password" />
-        <input type="text" name="image" alt="Signup" />
-        <textarea
-          name="bio"
-          Tell
-          us
-          about
-          yourself
-          and
-          what
-          sparks
-          your
-          love
-          for
-          fitness
-        />
+        <input type="text" name="username" placeholder="Username" />
+        <br />
+        <input type="password" name="password" placeholder="Password" />
+        <br />
+        <input type="text" name="image" placeholder="Image URL" alt="Signup" />
+        <br />
+        <textarea placeholder="Tell us about yourself" />
         <h3>preferences:</h3>
         <input type="checkbox" name="preferences[biking]" value="true" />
         <label>Biking</label>
