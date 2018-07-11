@@ -3,12 +3,12 @@ import React, { Component } from "react";
 class SignUp extends Component {
   render() {
     return 
-    <div>
+    <div className="form">
       <input type="text" name="username" value="Username" />
       <input type="password" name="password" value="Password" />
       <input type="image" alt="Signup" />
       <textarea name="bio" Tell us about yourself and what sparks your love for fitness />
-      <h3>preferences:</h3>
+      <h3>Preferences:</h3>
       <input type="checkbox" name="preferences[biking]" value="true" />
       <label>Biking</label>
       <br />
@@ -28,7 +28,7 @@ class SignUp extends Component {
       <label>Pilates</label>
       <br />
       <input type="checkbox" name="preferences[weightlifting]" value="true" />
-      <label>weightlifting</label>
+      <label>Weightlifting</label>
       <br />
       <input type="checkbox" name="preferences[crossfit]" value="true" />
       <label>Crossfit</label>
