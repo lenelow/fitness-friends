@@ -1,21 +1,21 @@
-import React, { Component } from "react";
-import "./App.css";
-import Login from "./Login";
+import React, { Component } from 'react'
+import './App.css'
+import Profile from './Profile'
 
 class App extends Component {
-  render() {
+  render () {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Fitness Friends</h1>
+      <div className='App'>
+        <header className='App-header'>
+          <h1 className='App-title'>Fitness Friends</h1>
         </header>
-        <Login />
-        <a href="/signup" id="signup">
+        <a href='/signup' id='signup'>
           Don't have an account? Sign up here!
         </a>
+        <Profile />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
