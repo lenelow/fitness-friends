@@ -1,19 +1,40 @@
 import React, { Component } from 'react'
 import './Profile.css'
 import ActivityList from './ActivityList'
+import axios from 'axios'
 
 class Profile extends Component {
   constructor (props) {
     super(props)
 
     this.state = {
-      user: 'Jimmy Byess',
-      image: 'http://img2.timeinc.net/people/i/2015/cbb/blog/150518/jimmy-fallon-02-300x400.jpg',
-      bio: 'I love to make bread and go running',
-      preferences: ['running', 'biking', 'weightlifting']
+      user: '',
+      image: '',
+      bio: '',
+      preferences: []
     }
   }
+
+  componentDidMount () {
+    axios.get('http://localhost:3001/api/profile/5b4779d8cecb8915b5012de1')
+      .then((res) => {
+        console.log(res)
+        this.setState({
+          user: res.data.username,
+          image: res.data.image,
+          bio: res.data.bio,
+          preferences: res.data.preferences
+        })
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+  }
+
   render () {
+    let prefList = this.state.preferences.map(item => {
+      return <li>{item}</li>
+    })
     return (
       <div>
         <h1 className='usersName'>{this.state.user}'s Profile</h1>
@@ -23,9 +44,7 @@ class Profile extends Component {
             <p><text>About Me:</text> {this.state.bio}</p>
             <ul>
               <text className='title'>My Interests: </text>
-              <li>{this.state.preferences[0]},</li>
-              <li>{this.state.preferences[1]},</li>
-              <li>{this.state.preferences[2]}</li>
+              {prefList}
             </ul>
           </div>
           <div className='rightColumn'>
