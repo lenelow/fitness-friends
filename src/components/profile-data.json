@@ -1,0 +1,20 @@
+[
+    {
+        "username": "Jimmy Byess",
+        "image": "http://img2.timeinc.net/people/i/2015/cbb/blog/150518/jimmy-fallon-02-300x400.jpg",
+        "bio": "I love to make bread and go running",
+        "preferences": ["running", "biking", "weightlifting"]
+    },
+    {
+        "username": "Zakk Fleischmann",
+        "image": "https://www.biography.com/.image/ar_1:1%2Cc_fill%2Ccs_srgb%2Cg_face%2Cq_auto:good%2Cw_300/MTE5NTU2MzE2Mzg0ODIyNzk1/zachary-taylor-9503363-1-402.jpg",
+        "bio": "I like to bike and hike and wear white v necks!",
+        "preferences": ["running", "biking", "weightlifting"]
+    },
+    {
+        "username": "Marissa Wood",
+        "image": "https://cdn.corporate.walmart.com/dims4/WMT/9b24dc0/2147483647/crop/1433x1911%2B289%2B0/resize/300x400%3E/quality/90/?url=https%3A%2F%2Fcdn.corporate.walmart.com%2F1e%2F66%2Fb230a25c41dda854254fd5bff766%2Fmarissa-mayer.jpg",
+        "bio": "Come yoga with me!",
+        "preferences": ["yoga"]
+    }
+]

@@ -1,16 +1,19 @@
-import React, { Component } from "react";
-import "./App.css";
+import React, { Component } from 'react'
+import './App.css'
+// import SignUp from "./SignUp";
+import Profile from './Profile'
 
 class App extends Component {
-  render() {
+  render () {
     return (
-      <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Fitness Friends</h1>
+      <div className='App'>
+        <header className='App-header'>
+          <h1 className='App-title'>Fitness Friends</h1>
         </header>
+        <Profile />
       </div>
-    );
+    )
   }
 }
 
-export default App;
+export default App
