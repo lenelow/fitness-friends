@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./App.css";
-import SignUp from "./SignUp";
 import Profile from "./Profile";
 import axios from "axios";
+import Signup from "./SignUp";
 
 class App extends Component {
   constructor() {
@@ -72,6 +72,7 @@ class App extends Component {
           <h1 className="App-title">Fitness Friends</h1>
         </header>
         <Profile />
+        <Signup />
       </div>
     );
   }
