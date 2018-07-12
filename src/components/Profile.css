@@ -4,15 +4,20 @@
 
 img {
     border: 1px solid black;
-    margin-top: 13vh;
+    margin-top: 7vh;
 }
 
 text {
     font-weight: bold;
+    text-align: center;
 }
 
-li {
-    display: inline-block;
+ul li {
+    display:list-item;
+    list-style-type: disc;
+    width: 10vw;
+    margin-left: 15vw;
+    margin-top: 3px;
 }
 
 .gridArea {
@@ -30,6 +35,21 @@ li {
 
 .activitiesHeader {
     margin-bottom: none;
+    font-size: 20px;
+}
+
+.bio {
+    width: 25vw;
+    height: 10vh;
+    margin-left: 10vw;
+    margin-top: 0;
+    border: 1px solid #AAB5A8;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.title {
+    padding-right: 50px;
 }
 
 

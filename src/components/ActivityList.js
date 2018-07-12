@@ -1,39 +1,28 @@
 import React, { Component } from 'react'
 import Activity from './Activity'
 import './ActivityList.css'
+import axios from 'axios'
 
 class ActivityList extends Component {
   constructor () {
     super()
     this.state = {
-      activities: [
-        {
-          _id: '5b461dbddddc474f3e56beb2',
-          name: 'jogging',
-          location: 'Meridien Hill Park',
-          date: '7/13/2018',
-          time: '5 pm',
-          description: "I'll be jogging around 5 miles at a 8:00 pace"
-        },
-        {
-          _id: '5b461dbddddc474f3e56beb3',
-          name: 'kayaking',
-          location: 'Key Bridge Boathouse',
-          date: '7/20/2018',
-          time: '9 am',
-          description: "I'll be kayaking for 1-2 hours"
-        },
-        {
-          _id: '5b461dbddddc474f3e56beb4',
-          name: 'Soul Cycle',
-          location: 'Mount Vernon Soul Cycle',
-          date: '7/16/2018',
-          time: '7 am',
-          description: "I'll be taking Gregg's 7:00am class!"
-        }
-      ]
+      activities: []
     }
   }
+  componentDidMount () {
+      axios.get('http://localhost:3001/api/activity')
+      .then((res) => {
+        console.log(res)
+        this.setState({
+          activities: res.data
+        })
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+
+  } //closes component did mount
 
   render () {
     let table = this.state.activities.map((activity, idx) => {
