@@ -12,7 +12,7 @@ class Profile extends Component {
       image: '',
       bio: '',
       preferences: [],
-      activitires: []
+      activities: []
     }
   }
 
