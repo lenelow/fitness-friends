@@ -44,7 +44,9 @@ class Profile extends Component {
         <div className='gridArea'>
           <div className='leftColumn'>
             <img src={this.state.image} height='200' width='150' />
-            <p><text>About Me:</text> {this.state.bio}</p>
+            <br />
+            <text className='aboutMe'>About Me:</text>
+            <p className='bio'>{this.state.bio}</p>
             <ul>
               <text className='title'>My Interests: </text>
               {prefList}
