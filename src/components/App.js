@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import SignUp from "./SignUp";
 import Profile from "./Profile";
+import axios from "axios";
 
 class App extends Component {
   constructor() {
@@ -21,6 +22,20 @@ class App extends Component {
     this.setState({
       [e.target.name]: e.target.value
     });
+  }
+
+  handleSignUp(e) {
+    e.preventDefault();
+    axios
+      .post("http://localhost:3001/users/signup", {
+        email: this.state.email,
+        password: this.state.password
+      })
+      .then(response => {
+        localStorage.token = response.data.token;
+        this.setState({ isLoggedIn: true });
+      })
+      .catch(err => console.log(err));
   }
 
   render() {
