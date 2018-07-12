@@ -11,8 +11,8 @@ text {
     font-weight: bold;
 }
 
-li {
-    display: inline-block;
+ul li {
+    display:list-item;
     padding-left: 5px;
     list-style-type: disc;
 }
@@ -32,6 +32,7 @@ li {
 
 .activitiesHeader {
     margin-bottom: none;
+    font-size: 20px;
 }
 
 

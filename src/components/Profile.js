@@ -11,25 +11,28 @@ class Profile extends Component {
       user: '',
       image: '',
       bio: '',
-      preferences: []
+      preferences: [],
+      activitires: []
     }
   }
 
   componentDidMount () {
-    axios.get('http://localhost:3001/api/profile/5b4779d8cecb8915b5012de1')
+    axios.get('http://localhost:3001/api/profile/5b479ec5bd2ecb1843d9b595')
       .then((res) => {
         console.log(res)
         this.setState({
           user: res.data.username,
           image: res.data.image,
           bio: res.data.bio,
-          preferences: res.data.preferences
+          preferences: res.data.preferences,
+          activitiylist: res.data.activities
         })
       })
       .catch((err) => {
         console.log(err)
       })
   }
+  
 
   render () {
     let prefList = this.state.preferences.map(item => {
@@ -50,6 +53,7 @@ class Profile extends Component {
           <div className='rightColumn'>
             <h2 className='activitiesHeader'>My Activities</h2>
             <ActivityList />
+            
           </div>
         </div>
       </div>
