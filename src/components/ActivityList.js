@@ -19,7 +19,7 @@ class ActivityList extends Component {
           name: "kayaking",
           location: "Key Brigde Boathouse",
           date: "2018-07-20",
-          time: 0900,
+          time: 900,
           description: "I'll be kayaking for 1-2 hours"
         },
         {
@@ -27,7 +27,7 @@ class ActivityList extends Component {
           name: "Soul Cycle",
           location: "Mount Vernon Soul Cycle",
           date: "2018-07-16",
-          time: 0700,
+          time: 700,
           description: "I'll be taking Gregg's 7:00am class!"
         }
       ]
@@ -38,13 +38,13 @@ class ActivityList extends Component {
     let list = this.state.activities.map((activity, idx) => {
       return (
         <li>
-          <Activity 
-          name={activity.name} 
-          location={activity.location}
-          date={activity.date} 
-          time={activity.time}
-          description={activity.description} 
-          idx={activity.idx} 
+          <Activity
+            name={activity.name}
+            location={activity.location}
+            date={activity.date}
+            time={activity.time}
+            description={activity.description}
+            idx={activity.idx}
           />
         </li>
       );

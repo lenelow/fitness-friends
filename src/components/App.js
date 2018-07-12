@@ -3,6 +3,7 @@ import "./App.css";
 import Login from "./Login";
 // import SignUp from "./SignUp";
 import Welcome from "./Welcome";
+// import ActivityList from "./ActivityList";
 
 class App extends Component {
   render() {
@@ -16,6 +17,7 @@ class App extends Component {
           Don't have an account? Sign up here!
         </a>
         {/* <SignUp /> */}
+        {/* <ActivityList /> */}
         <Welcome />
       </div>
     );
