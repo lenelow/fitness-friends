@@ -6,12 +6,14 @@ class FriendsList extends Component {
   render () {
     return (
       <div>
-        <h1>Friend List</h1>
+        <h1 className='myFriends'>My Friends</h1>
         <ul className='friendList'>
           {data.map(user => (
             <li>
-              {user.username}
-              <img src={user.image} />
+              <div className='friend'>
+                <img src={user.image} height='150' width='150' />
+                <h3>{user.username}</h3>
+              </div>
             </li>
           ))}
         </ul>

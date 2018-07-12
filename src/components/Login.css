@@ -6,12 +6,15 @@
 
 .login {
     margin-bottom: 10px;
+    margin-top: 25px;
+    font-size: 25px;
 }
 
 .loginButton {
     width: 60px;
     height: 25px;
-    margin-top: 5px;
+    margin-top: 8px;
+    margin-bottom: 8px;
     border-radius: 5px;
     background-color: #B1BDAF;
     background: rgba(177, 189, 175, 0.7);
@@ -20,3 +23,10 @@
 .loginButton:active {
     background-color: #737A71;
 }
+
+#signup {
+    font-size: 15px;
+    margin-top: 15px;
+  }
+
+ 

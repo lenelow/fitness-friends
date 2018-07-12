@@ -17,12 +17,10 @@ header {
   height: 10vh;
   padding: 20px;
   color: white;
+  margin-bottom: 5px;
 }
 
 .App-title {
   font-size: 1.5em;
 }
 
-#signup {
-  font-size: 10px;
-}
