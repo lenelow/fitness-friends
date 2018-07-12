@@ -20,3 +20,8 @@
 .loginButton:active {
     background-color: #737A71;
 }
+
+#signup {
+    font-size: 15px;
+    margin-top: 15px;
+  }

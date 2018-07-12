@@ -1,0 +1,17 @@
+.usersName {
+    font-size: 24px;
+}
+
+img {
+    border: 1px solid black;
+}
+
+text {
+    font-weight: bold;
+}
+
+li {
+    display: inline-block;
+}
+
+
