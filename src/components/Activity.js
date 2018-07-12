@@ -1,38 +1,19 @@
-import React, { Component } from "react";
+import React, { Component } from 'react'
+import './Activity.css'
 
 class Activity extends Component {
-  render() {
-    // let time = this.props.time.toString();
-
-    // function insert(index, insert, string) {
-    //   if (index > 0)
-    //     return (
-    //       string.substring(0, index) +
-    //       insert +
-    //       string.substring(index, this.length)
-    //     );
-    //   else return string + this;
-    // }
-
-    // let displayTime;
-    // if (time <= 1200) {
-    //   displayTime = insert(2, ":", time) + " AM";
-    // } else {
-    //   let pmTime = this.props.time - 1200;
-    //   displayTime = insert(2, ":", pmTime.toString()) + " PM";
-    // }
-
+  render () {
     return (
-      <div>
-        <h1>{this.props.name}</h1>
-        <h3>
+      <div classname='activityDetails'>
+        <h1 className='name'>{this.props.name}</h1>
+        <h2 className='dateAndTime'>
           {this.props.date}, {this.props.time}
-        </h3>
-        <p>{this.props.location}</p>
-        <p>{this.props.description}</p>
+        </h2>
+        <p className='location'>{this.props.location}</p>
+        <p className='description'>{this.props.description}</p>
       </div>
-    );
+    )
   }
 }
 
-export default Activity;
+export default Activity

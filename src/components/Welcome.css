@@ -1,0 +1,7 @@
+ /* {data.map(user => {
+    <h1>Welcome, {user.name}</h1> 
+  })}  */
+
+  h1 {
+      margin-bottom: 50px;
+  }

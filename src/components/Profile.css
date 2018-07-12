@@ -1,0 +1,35 @@
+.usersName {
+    font-size: 24px;
+}
+
+img {
+    border: 1px solid black;
+    margin-top: 13vh;
+}
+
+text {
+    font-weight: bold;
+}
+
+li {
+    display: inline-block;
+}
+
+.gridArea {
+    display: grid;
+}
+
+.leftColumn {
+    grid-column: 2/5;
+}
+
+.rightColumn {
+    grid-column: 5/8;
+    text-align: center;
+}
+
+.activitiesHeader {
+    margin-bottom: none;
+}
+
+
