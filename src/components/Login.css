@@ -6,12 +6,15 @@
 
 .login {
     margin-bottom: 10px;
+    margin-top: 25px;
+    font-size: 25px;
 }
 
 .loginButton {
     width: 60px;
     height: 25px;
-    margin-top: 5px;
+    margin-top: 8px;
+    margin-bottom: 8px;
     border-radius: 5px;
     background-color: #B1BDAF;
     background: rgba(177, 189, 175, 0.7);
@@ -26,16 +29,4 @@
     margin-top: 15px;
   }
 
-  /* // <div>
-  //   <h1 className='login'>Log In</h1>
-  //   <form>
-  //     <input className='loginInfo' type='text' value='Username' />
-  //     <br />
-  //     <input className='loginInfo' type='text' value='Password' />
-  //     <br />
-  //     <button className='loginButton' type='Submit' value='Login'>Submit</button>
-  //   </form>
-  //   <a href='/signup' id='signup'>
-  //     Don't have an account? Sign up here!
-  //   </a>
-  // </div> */
+ 

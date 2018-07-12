@@ -18,7 +18,7 @@ class ActivityList extends Component {
         {
           _id: '5b461dbddddc474f3e56beb3',
           name: 'kayaking',
-          location: 'Key Brigde Boathouse',
+          location: 'Key Bridge Boathouse',
           date: '7/20/2018',
           time: '9 am',
           description: "I'll be kayaking for 1-2 hours"
@@ -36,25 +36,36 @@ class ActivityList extends Component {
   }
 
   render () {
-    let list = this.state.activities.map((activity, idx) => {
+    let table = this.state.activities.map((activity, idx) => {
       return (
-        <li>
-          <Activity
-            name={activity.name}
-            location={activity.location}
-            date={activity.date}
-            time={activity.time}
-            description={activity.description}
-            idx={activity.idx}
-          />
-        </li>
+        <section>
+          <table class='activityTable'>
+            <thead>
+              <tr>
+                <th>Activity</th>
+                <th>Location</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>{activity.name}</td>
+                <td>{activity.location}</td>
+                <td>{activity.date}</td>
+                <td>{activity.time}</td>
+                <td>{activity.description}</td>
+                <td>{activity.idx}</td>
+              </tr>
+            </tbody>
+          </table>
+        </section>
       )
     })
     return (
       <div>
-        <ul>
-          {list}
-        </ul>
+        {table}
       </div>
     )
   }

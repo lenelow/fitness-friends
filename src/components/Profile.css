@@ -4,6 +4,7 @@
 
 img {
     border: 1px solid black;
+    margin-top: 13vh;
 }
 
 text {
@@ -12,6 +13,23 @@ text {
 
 li {
     display: inline-block;
+}
+
+.gridArea {
+    display: grid;
+}
+
+.leftColumn {
+    grid-column: 2/5;
+}
+
+.rightColumn {
+    grid-column: 5/8;
+    text-align: center;
+}
+
+.activitiesHeader {
+    margin-bottom: none;
 }
 
 
