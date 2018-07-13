@@ -45,31 +45,44 @@ class NewActivity extends Component {
       description: this.state.description
     };
     let activityId;
-    axios
-      .post("http://fitness-friends-api.herokuapp.com/api/activity/", activity)
-      .then(res => {
-        console.log(res);
-        activityId = res.data._id;
-        {
-          let url =
-            "http://fitness-friends-api.herokuapp.com/api/profile/" +
-            this.props.userId;
-          axios
-            .put(url, { itemid: activityId })
-            .then(res => {
-              console.log(res);
-            })
-            .catch(err => {
-              console.log(err);
-            });
-        }
-        this.setState({
-          redirect: true
+    if (
+      this.state.name &&
+      this.state.location &&
+      this.state.date &&
+      this.state.time &&
+      this.state.description
+    ) {
+      axios
+        .post(
+          "http://fitness-friends-api.herokuapp.com/api/activity/",
+          activity
+        )
+        .then(res => {
+          console.log(res);
+          activityId = res.data._id;
+          {
+            let url =
+              "http://fitness-friends-api.herokuapp.com/api/profile/" +
+              this.props.userId;
+            axios
+              .put(url, { itemid: activityId })
+              .then(res => {
+                console.log(res);
+              })
+              .catch(err => {
+                console.log(err);
+              });
+          }
+          this.setState({
+            redirect: true
+          });
+        })
+        .catch(err => {
+          console.log(err);
         });
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    } else {
+      console.log("make sure all fields are filled out and re-submit");
+    }
   };
 
   render() {
@@ -77,6 +90,7 @@ class NewActivity extends Component {
       <div className="new-activity form">
         {this.renderRedirect()}
         <h1 className="newActivity">New Activity: </h1>
+        <h2> </h2>
         <form>
           <label>Activity Name</label>
           <input type="text" name="name" onChange={this.handleChange} />
