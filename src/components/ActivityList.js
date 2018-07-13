@@ -1,34 +1,35 @@
-import React, { Component } from 'react'
-import Activity from './Activity'
-import './ActivityList.css'
-import axios from 'axios'
+import React, { Component } from "react";
+import Activity from "./Activity";
+import "./ActivityList.css";
+import axios from "axios";
 
 class ActivityList extends Component {
-  constructor () {
-    super()
+  constructor() {
+    super();
 
     this.state = {
       activities: []
-    }
+    };
   }
-  componentDidMount () {
-    axios.get('http://localhost:3001/api/activity')
-      .then((res) => {
-        console.log(res)
+  componentDidMount() {
+    axios
+      .get("http://fitness-friends-api.herokuapp.com/api/activity")
+      .then(res => {
+        console.log(res);
         this.setState({
           activities: res.data
-        })
+        });
       })
-      .catch((err) => {
-        console.log(err)
-      })
+      .catch(err => {
+        console.log(err);
+      });
   } // closes component did mount
 
-  render () {
+  render() {
     let table = this.state.activities.map((activity, idx) => {
       return (
         <section>
-          <table class='activityTable'>
+          <table class="activityTable">
             <thead>
               <tr>
                 <th>Activity</th>
@@ -50,10 +51,10 @@ class ActivityList extends Component {
             </tbody>
           </table>
         </section>
-      )
-    })
-    return <div>{table}</div>
+      );
+    });
+    return <div>{table}</div>;
   }
 }
 
-export default ActivityList
+export default ActivityList;

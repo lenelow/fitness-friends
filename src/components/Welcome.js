@@ -1,38 +1,43 @@
-import React, { Component } from 'react'
-import Profile from './Profile'
-import FriendList from './FriendsList'
-import './Welcome.css'
-import axios from 'axios'
+import React, { Component } from "react";
+import Profile from "./Profile";
+import FriendList from "./FriendsList";
+import "./Welcome.css";
+import axios from "axios";
+import { Link } from "react-router-dom";
 
 class Welcome extends Component {
-  constructor (props) {
-    super(props)
+  constructor(props) {
+    super(props);
 
     this.state = {
-      name: ''
-    }
+      name: ""
+    };
   }
 
-  componentDidMount () {
-    axios.get('http://localhost:3001/api/profile/5b479ec5bd2ecb1843d9b595')
-      .then((res) => {
-        console.log(res)
+  componentDidMount() {
+    axios
+      .get(
+        "http://fitness-friends-api.herokuapp.com/api/profile/5b47b3d9b971b10004e7c9b7"
+      )
+      .then(res => {
+        console.log(res);
         this.setState({
           name: res.data.username
-        })
+        });
       })
-      .catch((err) => {
-        console.log(err)
-      })
+      .catch(err => {
+        console.log(err);
+      });
   }
-  render () {
+  render() {
     return (
       <div>
-        <h1 className='welcome'>Welcome, {this.state.name}</h1>
+        <h1 className="welcome">Welcome, {this.state.name}</h1>
+        <Link to="/profile/5b47b3d9b971b10004e7c9b7">View Profile</Link>
         <FriendList />
       </div>
-    )
+    );
   }
 }
 
-export default Welcome
+export default Welcome;

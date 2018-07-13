@@ -1,112 +1,98 @@
-import React, { Component } from 'react'
-import './App.css'
-import Welcome from './Welcome'
-import Profile from './Profile'
-import Login from './Login'
-import { Route, Link } from 'react-router-dom'
-import SignUp from './SignUp'
-import NewActivity from './NewActivity'
-import axios from 'axios'
+import React, { Component } from "react";
+import "./App.css";
+import Welcome from "./Welcome";
+import Profile from "./Profile";
+import Login from "./Login";
+import { Route, Link } from "react-router-dom";
+import SignUp from "./SignUp";
+import NewActivity from "./NewActivity";
+import axios from "axios";
 
 class App extends Component {
-  constructor () {
-    super()
+  constructor() {
+    super();
 
     this.state = {
-      username: '',
-      email: '',
-      password: '',
+      username: "",
+      email: "",
+      password: "",
       isLoggedIn: false
-    }
+    };
 
-    this.handleInput = this.handleInput.bind(this)
-    this.handleSignUp = this.handleSignUp.bind(this)
-    this.handleSingUp = this.handleLogOut.bind(this)
-    this.handleLogIn = this.handleLogIn.bind(this)
+    this.handleInput = this.handleInput.bind(this);
+    this.handleSignUp = this.handleSignUp.bind(this);
+    this.handleSingUp = this.handleLogOut.bind(this);
+    this.handleLogIn = this.handleLogIn.bind(this);
   }
 
-  handleInput (e) {
+  handleInput(e) {
     this.setState({
       [e.target.name]: e.target.value
-    })
+    });
   }
 
-  handleSignUp (e) {
-    e.preventDefault()
+  handleSignUp(e) {
+    e.preventDefault();
     axios
-      .post('http://localhost:3001/users/signup', {
+      .post("http://fitness-friends-api.herokuapp.com/users/signup", {
         username: this.state.username,
         email: this.state.email,
         password: this.state.password
       })
       .then(response => {
-        localStorage.token = response.data.token
-        this.setState({ isLoggedIn: true })
+        localStorage.token = response.data.token;
+        this.setState({ isLoggedIn: true });
       })
-      .catch(err => console.log(err))
+      .catch(err => console.log(err));
   }
 
-  handleLogOut () {
+  handleLogOut() {
     this.setState({
-      email: '',
-      password: '',
+      email: "",
+      password: "",
       isLoggedIn: false
-    })
-    localStorage.clear()
+    });
+    localStorage.clear();
   }
 
-  handleLogIn (e) {
-    e.preventDefault()
+  handleLogIn(e) {
+    e.preventDefault();
     axios
-      .post('http://localhost:3001/users/login', {
+      .post("http://fitness-friends-api.herokuapp.com/users/login", {
         email: this.state.email,
         password: this.state.password
       })
       .then(res => {
-        localStorage.token = res.data.token
-        this.setState({ isLoggedIn: true })
+        localStorage.token = res.data.token;
+        this.setState({ isLoggedIn: true });
       })
-      .catch(err => console.log(err))
+      .catch(err => console.log(err));
   }
 
-  render () {
+  render() {
     return (
-      <div className='App'>
-        <nav className='nav'>
-          <Link to='/'><h1 className='logo'>Fitness Friends</h1></Link>
-          <Link to='/profile/:id'><h1 className='navButton myProfile'>My Profile</h1></Link>
-          <Link to='/login'><h1 className='navButton'>Logout</h1></Link>
+      <div className="App">
+        <nav className="nav">
+          <Link to="/">
+            <h1 className="logo">Fitness Friends</h1>
+          </Link>
+          <Link to="/profile/:id">
+            <h1 className="navButton myProfile">My Profile</h1>
+          </Link>
+          <Link to="/login">
+            <h1 className="navButton">Logout</h1>
+          </Link>
         </nav>
         <main>
-          <Route
-            path='/'
-            exact
-            component={Welcome}
-          />
-          <Route
-            path='/profile/:id'
-            exact
-            component={Profile}
-          />
-          <Route
-            path='/login'
-            exact
-            component={Login}
-          />
-          <Route
-            path='/signup'
-            exact
-            component={SignUp}
-          />
-          <Route
-            path='/add-activity'
-            exact
-            component={NewActivity}
-          />
+          <Route path="/" exact component={Welcome} />
+          <Route path="/profile/:id" exact component={Profile} />
+          <Route path="/login" exact component={Login} />
+          <Route path="/signup" exact component={SignUp} />
+          <Route path="/add-activity" exact component={NewActivity} />
         </main>
       </div>
-    )
+    );
   }
 }
 
-export default App
+export default App;
