@@ -5,45 +5,44 @@ import { Link } from 'react-router-dom'
 class SignUp extends Component {
   render () {
     return (
-      <div className='form'>
-        <h1 className='createAccount'>Create An Account:</h1>
-        <div className='inputForm'>
-          <div>
-            <label htmlFor='username'>Username</label>
-            <input
-              className='signupInput'
-              type='text'
-              name='username'
-              onChange={this.props.handleInput}
-            />
-          </div>
-          <div>
-            <label htmlFor='email'>Email</label>
-            <input className='signupInput' type='text' name='email' onChange={this.props.handleInput} />
-          </div>
-          <div>
-            <label htmlFor='password'>Password</label>
-            <input
-              className='signupInput'
-              type='text'
-              name='password'
-              onChange={this.props.handleInput}
-            />
-          </div>
-          <div>
-            <label htmlFor='image'>Profile Picture</label>
-            <input className='signupInput' type='text' name='image' onChange={this.props.handleInput} />
-          </div>
-          <div>
-            <label htmlFor='bio'>Bio</label>
-            <input
-              className='signupInput'
-              type='text'
-              name='bio'
-              placeholder='Tell us about yourself'
-              onChange={this.props.handleInput}
-            />
-          </div>
+      <div className="signupForm" action="/users/signup" method="post">
+        <div>
+          <label htmlFor="username">Username</label>
+          <input
+            type="text"
+            name="username"
+            onChange={this.props.handleInput}
+          />
+        </div>
+        <div>
+          <label htmlFor="email">Email</label>
+          <input type="text" name="email" onChange={this.props.handleInput} />
+        </div>
+        <div>
+          <label htmlFor="password">Password</label>
+          <input
+            type="text"
+            name="password"
+            onChange={this.props.handleInput}
+          />
+        </div>
+        <div>
+          <label htmlFor="image">Profile Picture</label>
+          <input
+            type="text"
+            name="image"
+            placeholder="image url"
+            onChange={this.props.handleInput}
+          />
+        </div>
+        <div>
+          <label htmlFor="bio">Bio</label>
+          <input
+            type="text"
+            name="bio"
+            placeholder="Tell us about yourself"
+            onChange={this.props.handleInput}
+          />
         </div>
         <div>
           <h3 className='preferences'>Preferences:</h3>
