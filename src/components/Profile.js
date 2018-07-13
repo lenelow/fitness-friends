@@ -4,6 +4,7 @@ import ActivityList from "./ActivityList";
 import NewActivity from "./NewActivity";
 import axios from "axios";
 
+
 class Profile extends Component {
   constructor(props) {
     super(props);
@@ -13,8 +14,8 @@ class Profile extends Component {
       image: "",
       bio: "",
       preferences: [],
-      activitires: []
-    };
+      activities: []
+    }
   }
 
   componentDidMount() {

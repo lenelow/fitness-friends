@@ -12,7 +12,7 @@ text {
     text-align: center;
 }
 
-ul li {
+interestList {
     display:list-item;
     list-style-type: disc;
     width: 10vw;
