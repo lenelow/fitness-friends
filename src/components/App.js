@@ -76,7 +76,7 @@ class App extends Component {
           <Link to="/">
             <h1 className="logo">Fitness Friends</h1>
           </Link>
-          <Link to="/profile/:id">
+          <Link to="/profile/5b47b3d9b971b10004e7c9b7">
             <h1 className="navButton myProfile">My Profile</h1>
           </Link>
           <Link to="/login">

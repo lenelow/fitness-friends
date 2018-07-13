@@ -38,7 +38,9 @@ class Profile extends Component {
         console.log(err);
       });
   }
-
+  toggleFormView = () => {
+    document.getElementById("hideActivities").style.display = "none";
+  };
   render() {
     let prefList = this.state.preferences.map(item => {
       return <li>{item}</li>;
@@ -52,18 +54,22 @@ class Profile extends Component {
             <br />
             <text className="aboutMe">About Me:</text>
             <p className="bio">{this.state.bio}</p>
-            <ul>
+            <ul className="interestList">
               <text className="title">My Interests: </text>
               {prefList}
             </ul>
           </div>
           <div className="rightColumn">
-            <h2 className="activitiesHeader">My Activities</h2>
-            <ActivityList />
-            <Link to="/add-activity">
-              <button className="addActivityButton">Add Activity</button>
-            </Link>
-            <NewActivity userId="5b47b3d9b971b10004e7c9b7" />
+            <div className="hideActivities">
+              <h2 className="activitiesHeader">My Activities</h2>
+              <ActivityList />
+              <Link to="/add-activity">
+                <button className="addActivityButton">Add Activity</button>
+              </Link>
+            </div>
+            <div className="newActivity">
+              <NewActivity userId="5b47b3d9b971b10004e7c9b7" />
+            </div>
           </div>
         </div>
       </div>
