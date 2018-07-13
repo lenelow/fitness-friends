@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class SignUp extends Component {
   render() {
     return (
-      <div className="form">
+      <div className="signupForm" action="/users/signup" method="post">
         <div>
           <label htmlFor="username">Username</label>
           <input
@@ -25,8 +25,13 @@ class SignUp extends Component {
           />
         </div>
         <div>
-          <label htmlFor="image">Image</label>
-          <input type="text" name="image" onChange={this.props.handleInput} />
+          <label htmlFor="image">Profile Picture</label>
+          <input
+            type="text"
+            name="image"
+            placeholder="image url"
+            onChange={this.props.handleInput}
+          />
         </div>
         <div>
           <label htmlFor="bio">Bio</label>
