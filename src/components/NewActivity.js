@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Redirect, Link } from "react-router-dom";
-import './NewActivity.css'
+import "./NewActivity.css";
 
 class NewActivity extends Component {
   constructor() {
@@ -62,7 +62,7 @@ class NewActivity extends Component {
     return (
       <div className="new-activity form">
         {this.renderRedirect()}
-        <h1 className='newActivity'>New Activity: </h1>
+        <h1 className="newActivity">New Activity: </h1>
         <form>
           <label>Activity Name</label>
           <input type="text" name="name" onChange={this.handleChange} />
@@ -77,11 +77,17 @@ class NewActivity extends Component {
           <input type="text" name="time" onChange={this.handleChange} />
           <br />
           <label>Description:</label>
-          <div className='descriptionAndButton'>
-            <textarea className='newActivityDescription' name="description" onChange={this.handleChange} />
+          <div className="descriptionAndButton">
+            <textarea
+              className="newActivityDescription"
+              name="description"
+              onChange={this.handleChange}
+            />
             <br />
-            <Link to='/profile/:id'>
-              <button className='newActivityButton' onClick={this.handleSubmit}>Submit</button>
+            <Link to="/profile/:id">
+              <button className="newActivityButton" onClick={this.handleSubmit}>
+                Submit
+              </button>
             </Link>
           </div>
         </form>
