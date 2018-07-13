@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./Profile.css";
 import ActivityList from "./ActivityList";
-import axios from "axios";
 import NewActivity from "./NewActivity";
+import axios from "axios";
 
 class Profile extends Component {
   constructor(props) {
@@ -13,13 +13,15 @@ class Profile extends Component {
       image: "",
       bio: "",
       preferences: [],
-      activitires: []
+      activities: []
     };
   }
 
   componentDidMount() {
     axios
-      .get("http://localhost:3001/api/profile/5b479ec5bd2ecb1843d9b595")
+      .get(
+        "http://fitness-friends-api.herokuapp.com/api/profile/5b47b3d9b971b10004e7c9b7"
+      )
       .then(res => {
         console.log(res);
         this.setState({
@@ -56,7 +58,7 @@ class Profile extends Component {
           <div className="rightColumn">
             <h2 className="activitiesHeader">My Activities</h2>
             <ActivityList />
-            <NewActivity userId={req.params.id} />
+            <NewActivity userId="5b47b3d9b971b10004e7c9b7" />
           </div>
         </div>
       </div>

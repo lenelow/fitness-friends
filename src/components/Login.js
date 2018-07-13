@@ -1,22 +1,41 @@
 import React, { Component } from 'react'
 import './Login.css'
-// import Signup from './SignUp'
+import { Link } from 'react-router-dom'
 
 class Login extends Component {
   render () {
     return (
       <div>
-        <h1 className='login'>Log In</h1>
+        <h1 className="loginForm">Log In</h1>
         <form>
-          <input className='loginInfo' type='text' value='Username' />
+          <input
+            className='loginInfo'
+            type='text'
+            value='Email'
+            onChange={this.props.handleInput}
+          />
           <br />
-          <input className='loginInfo' type='text' value='Password' />
+          <input
+            className='loginInfo'
+            type='text'
+            value='Password'
+            onChange={this.props.handleInput}
+          />
           <br />
-          <button className='loginButton' type='Submit' value='Login'>Submit</button>
+          <Link to='/'>
+            <button
+              className='loginButton'
+              type='Submit'
+              value='Login'
+              onClick={this.props.handleLogIn}
+            >
+              Submit
+            </button>
+          </Link>
         </form>
-        <a href='/signup' id='signup'>
+        <Link to='/signup' id='signup'>
           Don't have an account? Sign up here!
-        </a>
+        </Link>
       </div>
     )
   }

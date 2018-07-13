@@ -1,7 +1,5 @@
- /* {data.map(user => {
-    <h1>Welcome, {user.name}</h1> 
-  })}  */
-
-  h1 {
+.welcome {
       margin-bottom: 50px;
+      text-align: center;
   }
+

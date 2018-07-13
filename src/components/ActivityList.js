@@ -6,12 +6,13 @@ import axios from 'axios'
 class ActivityList extends Component {
   constructor () {
     super()
+
     this.state = {
       activities: []
     }
   }
   componentDidMount () {
-      axios.get('http://localhost:3001/api/activity')
+    axios.get('http://localhost:3001/api/activity')
       .then((res) => {
         console.log(res)
         this.setState({
@@ -21,8 +22,7 @@ class ActivityList extends Component {
       .catch((err) => {
         console.log(err)
       })
-
-  } //closes component did mount
+  } // closes component did mount
 
   render () {
     let table = this.state.activities.map((activity, idx) => {
@@ -52,11 +52,7 @@ class ActivityList extends Component {
         </section>
       )
     })
-    return (
-      <div>
-        {table}
-      </div>
-    )
+    return <div>{table}</div>
   }
 }
 
