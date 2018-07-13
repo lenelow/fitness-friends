@@ -5,6 +5,7 @@ import Profile from "./Profile";
 import Login from "./Login";
 import { Route, Link } from "react-router-dom";
 import SignUp from "./SignUp";
+import NewProfile from "./NewProfile";
 import NewActivity from "./NewActivity";
 import axios from "axios";
 
@@ -89,6 +90,7 @@ class App extends Component {
           <Route path="/login" exact component={Login} />
           <Route path="/signup" exact component={SignUp} />
           <Route path="/add-activity" exact component={NewActivity} />
+          <Route path="/newprofile" exact component={NewProfile} />
         </main>
       </div>
     );
