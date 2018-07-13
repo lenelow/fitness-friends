@@ -1,23 +1,43 @@
 import React, { Component } from "react";
-import data from "./profile-data.json";
 import "./FriendList.css";
+import axios from "axios";
 
 class FriendsList extends Component {
+  constructor() {
+    super();
+    this.state = {
+      friends: []
+    };
+  }
+
+  componentDidMount() {
+    axios
+      .get("http://fitness-friends-api.herokuapp.com/api/profile")
+      .then(res => {
+        console.log(res);
+        this.setState({
+          friends: res.data
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
   render() {
+    let friendsList = this.state.friends.map(user => (
+      <li>
+        <div className="friend">
+          <img src={user.image} height="150" width="150" />
+          <h3>{user.username}</h3>
+        </div>
+      </li>
+    ));
     return (
       <div>
         <h1 className="myFriends">My Friends</h1>
         <div className="friendList">
-          <ul>
-            {data.map(user => (
-              <li>
-                <div className="friend">
-                  <img src={user.image} height="150" width="150" />
-                  <h3>{user.username}</h3>
-                </div>
-              </li>
-            ))}
-          </ul>
+          <ul>{friendsList}</ul>
         </div>
       </div>
     );

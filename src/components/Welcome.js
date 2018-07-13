@@ -3,6 +3,7 @@ import Profile from "./Profile";
 import FriendList from "./FriendsList";
 import "./Welcome.css";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 class Welcome extends Component {
   constructor(props) {
@@ -15,7 +16,9 @@ class Welcome extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:3001/api/profile/5b479ec5bd2ecb1843d9b595")
+      .get(
+        "http://fitness-friends-api.herokuapp.com/api/profile/5b47b3d9b971b10004e7c9b7"
+      )
       .then(res => {
         console.log(res);
         this.setState({

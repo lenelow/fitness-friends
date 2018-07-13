@@ -69,8 +69,12 @@ text {
     margin-right: 45px;
   }
   
-  .addActivityButton:active {
+.addActivityButton:active {
     background-color: #7C857B;
+}
+
+  .newActivity {
+      display: none;
   }
 
 

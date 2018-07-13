@@ -54,6 +54,7 @@ class SignUp extends Component {
               onChange={this.props.handleInput}
             />
           </div>
+
         </div>
         <div>
           <h3 className="preferences">Preferences:</h3>
