@@ -43,26 +43,18 @@ input[type=submit] {
   border-radius: 5px;
   background: rgba(177, 189, 175, 0.7);
   font-size: 15px;
+  margin-right: 20px;
 }
 
 .signupButton:active {
   background-color: #7C857B;
 }
 
-input[type=checkbox]{
-  display: block;
-}
-
-
-
-
-/*
-
-.inputForm {
-  text-align: left;
-  padding-left: 140px;
+.preferenceCheckbox {
+  display: inline;
 }
 
 .preferences {
-  margin-bottom: 5px;
-} */
+  text-align: center;
+  margin-right: 30px;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./FriendList.css";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 class FriendsList extends Component {
   constructor() {
@@ -29,7 +30,9 @@ class FriendsList extends Component {
       <li>
         <div className="friend">
           <img src={user.image} height="150" width="150" />
-          <h3>{user.username}</h3>
+          <Link to={"/profile/" + user._id}>
+            <h3>{user.username}</h3>
+          </Link>
         </div>
       </li>
     ));

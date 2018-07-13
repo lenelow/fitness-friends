@@ -35,9 +35,9 @@ text {
 }
 
 .activitiesHeader {
-    margin-bottom: none;
     font-size: 20px;
     margin-right: 60px;
+    margin-top: 10px;
 }
 
 .bio {
@@ -54,10 +54,14 @@ text {
     padding-right: 50px;
 }
 
+.aboutMe {
+    padding: 15px 0;
+}
+
 .addActivityButton {
     width: 100px;
     height: 35px;
-    margin-top: 10px;
+    margin-top: 20px;
     margin-bottom: 0;
     border-radius: 5px;
     background: rgba(177, 189, 175, 0.7);
@@ -65,8 +69,12 @@ text {
     margin-right: 45px;
   }
   
-  .addActivityButton:active {
+.addActivityButton:active {
     background-color: #7C857B;
+}
+
+  .newActivity {
+      display: none;
   }
 
 

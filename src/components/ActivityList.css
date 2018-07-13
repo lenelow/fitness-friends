@@ -46,3 +46,18 @@ section {
 .activityTable tr td:nth-of-type(4):before { content: 'Time'; }
 .activityTable tr td:nth-of-type(5):before { content: 'Description'; }
 
+.addActivityButton {
+    width: 100px;
+    height: 35px;
+    margin-top: 20px;
+    margin-bottom: 0;
+    border-radius: 5px;
+    background: rgba(177, 189, 175, 0.7);
+    font-size: 15px;
+    margin-right: 45px;
+}
+  
+.addActivityButton:active {
+    background-color: #7C857B;
+}
+

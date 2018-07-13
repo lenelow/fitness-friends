@@ -33,7 +33,6 @@ class Welcome extends Component {
     return (
       <div>
         <h1 className="welcome">Welcome, {this.state.name}</h1>
-        <Link to="/profile/5b47b3d9b971b10004e7c9b7">View Profile</Link>
         <FriendList />
       </div>
     );
