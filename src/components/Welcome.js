@@ -28,7 +28,7 @@ class Welcome extends Component {
   render () {
     return (
       <div>
-        <h1>Welcome, {this.state.name}</h1>
+        <h1 className='welcome'>Welcome, {this.state.name}</h1>
         <FriendList />
       </div>
     )

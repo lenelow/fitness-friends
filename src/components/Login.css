@@ -17,12 +17,15 @@
     margin-top: 8px;
     margin-bottom: 8px;
     border-radius: 5px;
-    background-color: #B1BDAF;
     background: rgba(177, 189, 175, 0.7);
 }
 
 .loginButton:active {
     background-color: #737A71;
+}
+
+.navButton {
+    display: none;
 }
 
 #signup {

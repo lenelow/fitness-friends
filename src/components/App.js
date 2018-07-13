@@ -4,6 +4,7 @@ import Welcome from './Welcome'
 import Profile from './Profile'
 import Login from './Login'
 import { Route, Link } from 'react-router-dom'
+import SignUp from './SignUp'
 import axios from 'axios'
 
 class App extends Component {
@@ -90,6 +91,11 @@ class App extends Component {
             path='/login'
             exact
             component={Login}
+          />
+          <Route
+            path='/signup'
+            exact
+            component={SignUp}
           />
         </main>
       </div>
