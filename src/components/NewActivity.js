@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
+import "./NewActivity.css";
 
 class NewActivity extends Component {
   constructor() {
@@ -28,7 +29,7 @@ class NewActivity extends Component {
 
   renderRedirect = () => {
     if (this.state.redirect) {
-      return <Redirect to="/" />;
+      return <Redirect to="/profile/:id" />;
     }
     //change this redirect later
   };
@@ -73,9 +74,9 @@ class NewActivity extends Component {
 
   render() {
     return (
-      <div className="new-activity">
+      <div className="new-activity form">
         {this.renderRedirect()}
-        <h1>New Activity: </h1>
+        <h1 className="newActivity">New Activity: </h1>
         <form>
           <label>Activity Name</label>
           <input type="text" name="name" onChange={this.handleChange} />
@@ -90,9 +91,19 @@ class NewActivity extends Component {
           <input type="text" name="time" onChange={this.handleChange} />
           <br />
           <label>Description:</label>
-          <textarea name="description" onChange={this.handleChange} />
-          <br />
-          <button onClick={this.handleSubmit}>Submit</button>
+          <div className="descriptionAndButton">
+            <textarea
+              className="newActivityDescription"
+              name="description"
+              onChange={this.handleChange}
+            />
+            <br />
+            <Link to="/profile/:id">
+              <button className="newActivityButton" onClick={this.handleSubmit}>
+                Submit
+              </button>
+            </Link>
+          </div>
         </form>
       </div>
     );

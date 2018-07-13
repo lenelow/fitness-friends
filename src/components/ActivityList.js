@@ -53,7 +53,7 @@ class ActivityList extends Component {
         </section>
       );
     });
-    return <div>{table}</div>;
+    return <div className="activities-container">{table}</div>;
   }
 }
 
