@@ -19,10 +19,11 @@ class Profile extends Component {
   }
 
   componentDidMount() {
+    const apiUrl = "http://fitness-friends-api.herokuapp.com/api/profile/";
+    const profile = this.props.match.params.id;
+    const url = `${apiUrl}${profile}`;
     axios
-      .get(
-        "http://fitness-friends-api.herokuapp.com/api/profile/5b47b3d9b971b10004e7c9b7"
-      )
+      .get(url)
       .then(res => {
         console.log(res);
         this.setState({
