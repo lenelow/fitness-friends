@@ -1,44 +1,44 @@
-import React, { Component } from 'react'
-import './Login.css'
-import { Link } from 'react-router-dom'
+import React, { Component } from "react";
+import "./Login.css";
+import { Link } from "react-router-dom";
 
 class Login extends Component {
-  render () {
+  render() {
     return (
       <div>
-        <h1 className="loginForm">Log In</h1>
-        <form>
+        <form className="form">
+          <h1 className="login">Log In</h1>
           <input
-            className='loginInfo'
-            type='text'
-            value='Email'
+            className="loginInfo"
+            type="text"
+            value="Email"
             onChange={this.props.handleInput}
           />
           <br />
           <input
-            className='loginInfo'
-            type='text'
-            value='Password'
+            className="loginInfo"
+            type="text"
+            value="Password"
             onChange={this.props.handleInput}
           />
           <br />
-          <Link to='/'>
+          <Link to="/">
             <button
-              className='loginButton'
-              type='Submit'
-              value='Login'
+              className="loginButton"
+              type="Submit"
+              value="Login"
               onClick={this.props.handleLogIn}
             >
               Submit
             </button>
           </Link>
         </form>
-        <Link to='/signup' id='signup'>
+        <Link to="/signup" id="signup">
           Don't have an account? Sign up here!
         </Link>
       </div>
-    )
+    );
   }
 }
 
-export default Login
+export default Login;

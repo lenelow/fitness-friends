@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Profile.css";
 import ActivityList from "./ActivityList";
+import { Link } from "react-router-dom";
 import NewActivity from "./NewActivity";
 import axios from "axios";
 
@@ -58,6 +59,9 @@ class Profile extends Component {
           <div className="rightColumn">
             <h2 className="activitiesHeader">My Activities</h2>
             <ActivityList />
+            <Link to="/add-activity">
+              <button className="addActivityButton">Add Activity</button>
+            </Link>
             <NewActivity userId="5b47b3d9b971b10004e7c9b7" />
           </div>
         </div>
