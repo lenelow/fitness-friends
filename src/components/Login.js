@@ -6,8 +6,8 @@ class Login extends Component {
   render () {
     return (
       <div>
-        <h1 className='login'>Log In</h1>
-        <form>
+        <form className='form'>
+          <h1 className='login'>Log In</h1>
           <input
             className='loginInfo'
             type='text'

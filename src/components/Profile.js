@@ -48,7 +48,7 @@ class Profile extends Component {
             <br />
             <text className='aboutMe'>About Me:</text>
             <p className='bio'>{this.state.bio}</p>
-            <ul interestList>
+            <ul className='interestList'>
               <text className='title'>My Interests: </text>
               {prefList}
             </ul>

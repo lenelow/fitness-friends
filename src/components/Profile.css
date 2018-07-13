@@ -12,8 +12,8 @@ text {
     text-align: center;
 }
 
-interestList {
-    display:list-item;
+.interestList li {
+    display: list-item;
     list-style-type: disc;
     width: 10vw;
     margin-left: 15vw;

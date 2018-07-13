@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { Redirect } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import './NewActivity.css'
 
 class NewActivity extends Component {
@@ -29,7 +29,7 @@ class NewActivity extends Component {
 
   renderRedirect = () => {
     if (this.state.redirect) {
-      return <Redirect to="/" />;
+      return <Redirect to="/profile/:id" />;
     }
     //change this redirect later
   };
@@ -80,7 +80,9 @@ class NewActivity extends Component {
           <div className='descriptionAndButton'>
             <textarea className='newActivityDescription' name="description" onChange={this.handleChange} />
             <br />
-            <button className='newActivityButton' onClick={this.handleSubmit}>Submit</button>
+            <Link to='/profile/:id'>
+              <button className='newActivityButton' onClick={this.handleSubmit}>Submit</button>
+            </Link>
           </div>
         </form>
       </div>
