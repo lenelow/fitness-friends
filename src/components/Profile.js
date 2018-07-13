@@ -55,8 +55,9 @@ class Profile extends Component {
           </div>
           <div className="rightColumn">
             <h2 className="activitiesHeader">My Activities</h2>
+            <ActivityList />
             <Link to="/add-activity">
-              <ActivityList />
+              <button className="addActivityButton">Add Activity</button>
             </Link>
           </div>
         </div>

@@ -13,7 +13,7 @@ class ActivityList extends Component {
   }
   componentDidMount() {
     axios
-      .get("http://localhost:3001/api/activity")
+      .get("http://fitness-friends-api.herokuapp.com/api/activity")
       .then(res => {
         console.log(res);
         this.setState({
@@ -53,7 +53,7 @@ class ActivityList extends Component {
         </section>
       );
     });
-    return <div>{table}</div>;
+    return <div className="activities-container">{table}</div>;
   }
 }
 
