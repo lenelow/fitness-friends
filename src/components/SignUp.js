@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './SignUp.css'
+import { Link } from 'react-router-dom'
 
 class SignUp extends Component {
   render () {
@@ -73,7 +74,9 @@ class SignUp extends Component {
           <input className='checkbox' type='checkbox' name='preferences[solidcore]' value='true' />
           <label>Solidcore</label>
         </div>
-        <button className='signupButton' value='signup' type='submit' onClick={this.props.handleSignUp}>Sign Up</button>
+        <Link to='/profile/:id'>
+          <button className='signupButton' value='signup' type='submit' onClick={this.props.handleSignUp}>Sign Up</button>
+        </Link>
       </div>
     )
   }

@@ -5,6 +5,7 @@ import Profile from './Profile'
 import Login from './Login'
 import { Route, Link } from 'react-router-dom'
 import SignUp from './SignUp'
+import NewActivity from './NewActivity'
 import axios from 'axios'
 
 class App extends Component {
@@ -96,6 +97,11 @@ class App extends Component {
             path='/signup'
             exact
             component={SignUp}
+          />
+          <Route
+            path='/add-activity'
+            exact
+            component={NewActivity}
           />
         </main>
       </div>
