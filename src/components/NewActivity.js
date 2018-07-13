@@ -43,26 +43,28 @@ class NewActivity extends Component {
       time: this.state.time,
       description: this.state.description
     };
-    let id;
+    let activityId;
     axios
-      .post("https://fitness-friends-api.herokuapp.com/api/activity/", activity)
+      .post("http://fitness-friends-api.herokuapp.com/api/activity/", activity)
       .then(res => {
         console.log(res);
-        console.log(res.data);
-        id = res.data._id;
+        activityId = res.data._id;
+        {
+          let url =
+            "http://fitness-friends-api.herokuapp.com/api/profile/" +
+            this.props.userId;
+          axios
+            .put(url, { itemid: activityId })
+            .then(res => {
+              console.log(res);
+            })
+            .catch(err => {
+              console.log(err);
+            });
+        }
         this.setState({
           redirect: true
         });
-      })
-      .catch(err => {
-        console.log(err);
-      });
-    let url =
-      "https://fitness-friends-api.herokuapp.com/user/" + this.props.userId;
-    axios
-      .put(url, { itemid: id })
-      .then(res => {
-        console.log(res);
       })
       .catch(err => {
         console.log(err);
