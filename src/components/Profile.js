@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./Profile.css";
 import ActivityList from "./ActivityList";
 import { Link } from "react-router-dom";
+import NewActivity from "./NewActivity";
 import axios from "axios";
 
 class Profile extends Component {
@@ -19,7 +20,9 @@ class Profile extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:3001/api/profile/5b479ec5bd2ecb1843d9b595")
+      .get(
+        "http://fitness-friends-api.herokuapp.com/api/profile/5b47b3d9b971b10004e7c9b7"
+      )
       .then(res => {
         console.log(res);
         this.setState({
@@ -48,7 +51,7 @@ class Profile extends Component {
             <br />
             <text className="aboutMe">About Me:</text>
             <p className="bio">{this.state.bio}</p>
-            <ul className="interestList">
+            <ul>
               <text className="title">My Interests: </text>
               {prefList}
             </ul>
@@ -59,6 +62,7 @@ class Profile extends Component {
             <Link to="/add-activity">
               <button className="addActivityButton">Add Activity</button>
             </Link>
+            <NewActivity userId="5b47b3d9b971b10004e7c9b7" />
           </div>
         </div>
       </div>
