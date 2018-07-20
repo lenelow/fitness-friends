@@ -29,7 +29,7 @@ $ npm install
 $ npm start
 ``` 
 
-The live, deployed version of this project can be found at: [insert the surge link here](www.insertSurgeLinkHere)
+The live, deployed version of this project can be found at: [http://fitnessfriends.surge.sh/](http://fitnessfriends.surge.sh/)
 
 
 ## Future Directions & Unsolved Problems
