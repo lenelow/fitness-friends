@@ -1,5 +1,7 @@
 # Fitness Friends 
 
+![fitness-friends](https://user-images.githubusercontent.com/26101268/43014139-395db7a4-8c19-11e8-8a0b-0c3146b33908.png)
+
 ## Description
 
 This is the front-end server for our Fitness Friends App we built for General Assembly's WDI group project.  This was built with [Create React App](https://github.com/facebookincubator/create-react-app). For details about the back end, please visit [https://github.com/MarissaWood/fitness-friends-api](https://github.com/MarissaWood/fitness-friends-api).  
