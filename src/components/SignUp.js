@@ -6,8 +6,8 @@ class SignUp extends Component {
     <div className='form'>
       <input type='text' name='username' value='Username' />
       <input type='password' name='password' value='Password' />
-      <input type='image' alt='Signup' />
       <textarea name='bio' Tell us about yourself and what sparks your love for fitness />
+      <input type='file' alt='Signup' />
       <h3>Preferences:</h3>
       <input type='checkbox' name='preferences[biking]' value='true' />
       <label>Biking</label>
