@@ -3,7 +3,6 @@ import "./Profile.css";
 import ActivityList from "./ActivityList";
 import { Link } from "react-router-dom";
 import NewActivity from "./NewActivity";
-import axios from "axios";
 
 class Profile extends Component {
   constructor(props) {
@@ -17,30 +16,6 @@ class Profile extends Component {
       activities: []
     };
   }
-
-  componentDidMount() {
-    const apiUrl = "http://fitness-friends-api.herokuapp.com/api/profile/";
-    const profile = this.props.match.params.id;
-    const url = `${apiUrl}${profile}`;
-    axios
-      .get(url)
-      .then(res => {
-        console.log(res);
-        this.setState({
-          user: res.data.username,
-          image: res.data.image,
-          bio: res.data.bio,
-          preferences: res.data.preferences,
-          activitiylist: res.data.activities
-        });
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  }
-  toggleFormView = () => {
-    document.getElementById("hideActivities").style.display = "none";
-  };
   render() {
     let prefList = this.state.preferences.map(item => {
       return <li>{item}</li>;

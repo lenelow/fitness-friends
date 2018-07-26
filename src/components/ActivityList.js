@@ -6,20 +6,15 @@ import { connect } from "react-redux";
 class ActivityList extends Component {
   constructor() {
     super();
-
-    this.state = {
-      activities: []
-    };
   }
 componentDidMount() {
-  
+  this.props.fetchAndHandleActivities()
 };
 
-
   render() {
-    let table = this.state.activities.map((activity, idx) => {
+    let table = this.props.activities.map((activity) => {
       return (
-        <section>
+        <section key={activity._id}>
           <table class="activityTable">
             <thead>
               <tr>
@@ -37,7 +32,6 @@ componentDidMount() {
                 <td>{activity.date}</td>
                 <td>{activity.time}</td>
                 <td>{activity.description}</td>
-                <td>{activity.idx}</td>
               </tr>
             </tbody>
           </table>
@@ -56,4 +50,4 @@ const mapDistpatchToProps = dispatch => ({
   fetchAndHandleActivities: () => dispatch(fetchAndHandleActivities())
 })
 
-export default connect(ActivityList);
+export default connect(mapStateToProps, mapDistpatchToProps)(ActivityList);
