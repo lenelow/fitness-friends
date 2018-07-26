@@ -11,14 +11,14 @@ class Login extends Component {
           <input
             className="loginInfo"
             type="text"
-            value="Email"
+            placeholder="Email"
             onChange={this.props.handleInput}
           />
           <br />
           <input
             className="loginInfo"
             type="text"
-            value="Password"
+            placeholder="Password"
             onChange={this.props.handleInput}
           />
           <br />
@@ -26,7 +26,7 @@ class Login extends Component {
             <button
               className="loginButton"
               type="Submit"
-              value="Login"
+              placeholder="Login"
               onClick={this.props.handleLogIn}
             >
               Submit
