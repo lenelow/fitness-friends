@@ -6,3 +6,5 @@ const rootReducer = combineReducers({
     activities: activitiesReducer,
     profiles: profilesReducer
 })
+
+export default rootReducer;

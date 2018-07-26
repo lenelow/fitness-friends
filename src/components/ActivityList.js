@@ -7,12 +7,12 @@ class ActivityList extends Component {
   constructor() {
     super();
   }
-componentDidMount() {
-  this.props.fetchAndHandleActivities()
-};
+  componentDidMount() {
+    this.props.fetchAndHandleActivities();
+  }
 
   render() {
-    let table = this.props.activities.map((activity) => {
+    let table = this.props.activities.map(activity => {
       return (
         <section key={activity._id}>
           <table class="activityTable">
@@ -42,12 +42,15 @@ componentDidMount() {
   }
 }
 const mapStateToProps = ({ activities, loading }) => ({
-  activities,
-  loading
-}) 
+  activities: activities.activities,
+  loading: activities.loading
+});
 
 const mapDistpatchToProps = dispatch => ({
   fetchAndHandleActivities: () => dispatch(fetchAndHandleActivities())
-})
+});
 
-export default connect(mapStateToProps, mapDistpatchToProps)(ActivityList);
+export default connect(
+  mapStateToProps,
+  mapDistpatchToProps
+)(ActivityList);

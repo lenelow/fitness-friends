@@ -4,14 +4,13 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { fetchAndHandleProfiles } from "../actions/profiles";
 
-
 class FriendsList extends Component {
   constructor() {
     super();
   }
 
   componentDidMount() {
-    this.props.fetchAndHandleProfiles()
+    this.props.fetchAndHandleProfiles();
   }
 
   render() {
@@ -37,12 +36,15 @@ class FriendsList extends Component {
 }
 
 const mapStateToProps = ({ profiles, loading }) => ({
-  profiles,
-  loading
-})
+  profiles: profiles.profiles,
+  loading: profiles.loading
+});
 
 const mapDispatchToProps = dispatch => ({
   fetchAndHandleProfiles: () => dispatch(fetchAndHandleProfiles())
-})
+});
 
-export default connect(mapStateToProps, mapDispatchToProps)(FriendsList);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(FriendsList);

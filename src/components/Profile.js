@@ -3,35 +3,34 @@ import "./Profile.css";
 import ActivityList from "./ActivityList";
 import { Link } from "react-router-dom";
 import NewActivity from "./NewActivity";
+import { fetchAndHandleProfile } from "../actions/profiles";
+import { connect } from "react-redux";
 
 class Profile extends Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      user: "",
-      image: "",
-      bio: "",
-      preferences: [],
-      activities: []
-    };
   }
+  componentDidMount() {
+    this.props.fetchAndHandleProfile(this.props.match.params.id);
+  }
+
   render() {
-    let prefList = this.state.preferences.map(item => {
-      return <li>{item}</li>;
-    });
-    return (
+    return this.props.loading ? (
+      <div>loading</div>
+    ) : (
       <div>
-        <h1 className="usersName">{this.state.user}'s Profile</h1>
+        <h1 className="usersName">{this.props.user}'s Profile</h1>
         <div className="gridArea">
           <div className="leftColumn">
-            <img src={this.state.image} height="200" width="150" />
+            <img src={this.props.image} height="200" width="150" />
             <br />
             <text className="aboutMe">About Me:</text>
-            <p className="bio">{this.state.bio}</p>
+            <p className="bio">{this.props.bio}</p>
             <ul className="interestList">
               <text className="title">My Interests: </text>
-              {prefList}
+              {this.props.preferences.map(item => {
+                return <li>{item}</li>;
+              })}
             </ul>
           </div>
           <div className="rightColumn">
@@ -51,5 +50,24 @@ class Profile extends Component {
     );
   }
 }
+const mapStateToProps = ({ profiles, loading }) => {
+  if (profiles.profile.username) {
+    return {
+      user: profiles.profile.username,
+      image: profiles.profile.image,
+      bio: profiles.profile.bio,
+      preferences: profiles.profile.preferenes,
+      activityList: profiles.profile.activityList,
+      loading: profiles.profile.loading
+    };
+  }
+};
 
-export default Profile;
+const mapDispatchToProps = dispatch => ({
+  fetchAndHandleProfile: id => dispatch(fetchAndHandleProfile(id))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Profile);

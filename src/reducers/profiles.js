@@ -40,5 +40,8 @@ export default (state = initialState, action) => {
                 ...state,
                 profiles: state.profiles.filter(({ _id }) => _id !== action.id)
             }
+        default: {
+            return state
+        }
     }
 }
