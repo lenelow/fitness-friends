@@ -1,5 +1,7 @@
 # Fitness Friends 
 
+![fitness-friends](https://user-images.githubusercontent.com/26101268/43014139-395db7a4-8c19-11e8-8a0b-0c3146b33908.png)
+
 ## Description
 
 This is the front-end server for our Fitness Friends App we built for General Assembly's WDI group project.  This was built with [Create React App](https://github.com/facebookincubator/create-react-app). For details about the back end, please visit [https://github.com/MarissaWood/fitness-friends-api](https://github.com/MarissaWood/fitness-friends-api).  
@@ -29,7 +31,7 @@ $ npm install
 $ npm start
 ``` 
 
-The live, deployed version of this project can be found at: [insert the surge link here](www.insertSurgeLinkHere)
+The live, deployed version of this project can be found at: [http://fitnessfriends.surge.sh/](http://fitnessfriends.surge.sh/)
 
 
 ## Future Directions & Unsolved Problems
