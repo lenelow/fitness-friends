@@ -15,9 +15,12 @@ class Welcome extends Component {
     this.props.fetchAndHandleProfile("5b47b3d9b971b10004e7c9b7");
   }
   render() {
+    if (!this.props.profile) {
+      return <div>loading</div>;
+    }
     return (
       <div>
-        <h1 className="welcome">Welcome</h1>
+        <h1 className="welcome">Welcome, {this.props.profile.username}</h1>
         <FriendList />
       </div>
     );
@@ -25,8 +28,7 @@ class Welcome extends Component {
 }
 
 const mapStateToProps = ({ profiles, loading }) => ({
-  profile: profiles.profile,
-  loading: profiles.loading
+  profile: profiles.profile
 });
 
 const mapDispatchToProps = dispatch => ({
