@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Activity from "./Activity";
 import "./ActivityList.css";
-import axios from "axios";
+import { fetchAndHandleActivities } from "../actions/activities";
+import { connect } from "react-redux";
 
 class ActivityList extends Component {
   constructor() {
@@ -11,19 +11,10 @@ class ActivityList extends Component {
       activities: []
     };
   }
-  componentDidMount() {
-    axios
-      .get("http://fitness-friends-api.herokuapp.com/api/activity")
-      .then(res => {
-        console.log(res);
-        this.setState({
-          activities: res.data
-        });
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  } // closes component did mount
+componentDidMount() {
+  
+};
+
 
   render() {
     let table = this.state.activities.map((activity, idx) => {
@@ -56,5 +47,13 @@ class ActivityList extends Component {
     return <div className="activities-container">{table}</div>;
   }
 }
+const mapStateToProps = ({ activities, loading }) => ({
+  activities,
+  loading
+}) 
 
-export default ActivityList;
+const mapDistpatchToProps = dispatch => ({
+  fetchAndHandleActivities: () => dispatch(fetchAndHandleActivities())
+})
+
+export default connect(ActivityList);
