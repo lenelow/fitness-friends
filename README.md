@@ -1,5 +1,7 @@
 # Fitness Friends 
 
+**This project is not yet finished. We are still working to make it functional, and hope to finish it in the coming weeks**
+
 ![fitness-friends](https://user-images.githubusercontent.com/26101268/43014139-395db7a4-8c19-11e8-8a0b-0c3146b33908.png)
 
 ## Description
