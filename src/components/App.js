@@ -3,16 +3,16 @@ import "./App.css";
 import Welcome from "./Welcome";
 import Profile from "./Profile";
 import Login from "./Login";
-import { Route, Link } from "react-router-dom";
+import { Route } from "react-router-dom";
 import SignUp from "./SignUp";
 import NewActivity from "./NewActivity";
-import Header from "./Header"
+import Header from "./Header";
 import { BrowserRouter as Router } from "react-router-dom";
 
 class App extends Component {
-  constructor() {
-    super();
-  }
+  // constructor() {
+  //   super();
+  // }
 
   render() {
     return (

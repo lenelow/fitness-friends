@@ -5,9 +5,9 @@ import { connect } from "react-redux";
 import { fetchAndHandleProfiles } from "../actions/profiles";
 
 class FriendsList extends Component {
-  constructor() {
-    super();
-  }
+  // constructor() {
+  //   super();
+  // }
 
   componentDidMount() {
     this.props.fetchAndHandleProfiles();
@@ -15,9 +15,9 @@ class FriendsList extends Component {
 
   render() {
     let friendsList = this.props.profiles.map(user => (
-      <li>
+      <li key={user.id}>
         <div className="friend">
-          <img src={user.image} height="150" width="150" />
+          <img src={user.image} height="150" width="150" alt="user main" />
           <Link to={"/profile/" + user._id}>
             <h3>{user.username}</h3>
           </Link>
