@@ -61,7 +61,7 @@ class NewActivity extends Component {
       <div className="new-activity form">
         <h1 className="newActivity">{this.props.title}</h1>
         <form>
-          <label>Activity Name</label>
+          <label>Activity Name *</label>
           <input
             type="text"
             name="name"
@@ -69,7 +69,7 @@ class NewActivity extends Component {
             value={this.state.name}
           />
           <br />
-          <label>Location:</label>
+          <label>Location *</label>
           <input
             type="text"
             name="location"
@@ -77,27 +77,30 @@ class NewActivity extends Component {
             value={this.state.location}
           />
           <br />
-          <label>Date:</label>
+          <label>Date *</label>
           <input
             type="text"
             name="date"
+            placeholder="01/01/2020"
             onChange={this.handleChange}
             value={this.state.date}
           />
           <br />
-          <label>Time:</label>
+          <label>Time *</label>
           <input
             type="text"
             name="time"
+            placeholder="11:00 am"
             onChange={this.handleChange}
             value={this.state.time}
           />
           <br />
-          <label>Description:</label>
+          <label>Description *</label>
           <div className="descriptionAndButton">
             <textarea
               className="newActivityDescription"
               name="description"
+              placeholder="add some notes about your activity!"
               onChange={this.handleChange}
               value={this.state.description}
             />
