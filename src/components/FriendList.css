@@ -1,5 +1,18 @@
 @import url("https://fonts.googleapis.com/css?family=Ubuntu");
 
-.friendList {
-    list-style-type: none;
+.friendList > ul li { 
+    list-style-type: none; 
+    display: inline-block;
+    margin: 0 15px 15px 15px;
+}
+
+.friend {
+    padding-left: 0;
+}
+
+.myFriends {
+    font-size: 22px;
+    color: #5B615A;
+    margin-bottom: 0;
+    text-decoration: underline;
 }

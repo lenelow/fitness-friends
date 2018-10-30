@@ -1,0 +1,80 @@
+.usersName {
+    font-size: 24px;
+}
+
+img {
+    border: 1px solid black;
+    margin-top: 7vh;
+}
+
+text {
+    font-weight: bold;
+    text-align: center;
+}
+
+.interestList li {
+    display: list-item;
+    list-style-type: disc;
+    width: 10vw;
+    margin-left: 15vw;
+    margin-top: 3px;
+}
+
+.gridArea {
+    display: grid;
+}
+
+.leftColumn {
+    grid-column: 2/5;
+}
+
+.rightColumn {
+    grid-column: 5/8;
+    text-align: center;
+    margin-right: 50px;
+}
+
+.activitiesHeader {
+    font-size: 20px;
+    margin-right: 60px;
+    margin-top: 10px;
+}
+
+.bio {
+    width: 25vw;
+    height: 10vh;
+    margin-left: 10vw;
+    margin-top: 0;
+    border: 1px solid #AAB5A8;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.title {
+    padding-right: 50px;
+}
+
+.aboutMe {
+    padding: 15px 0;
+}
+
+.addActivityButton {
+    width: 100px;
+    height: 35px;
+    margin-top: 20px;
+    margin-bottom: 0;
+    border-radius: 5px;
+    background: rgba(177, 189, 175, 0.7);
+    font-size: 15px;
+    margin-right: 45px;
+  }
+  
+.addActivityButton:active {
+    background-color: #7C857B;
+}
+
+  .newActivity {
+      display: none;
+  }
+
+

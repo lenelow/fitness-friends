@@ -1,0 +1,21 @@
+@import url("https://fonts.googleapis.com/css?family=Ubuntu");
+
+.name {
+    font-size: 20px;
+}
+
+.dateAndTime {
+    font-size: 15px;
+}
+
+.location {
+    font-size: 12px;
+}
+
+.description {
+    font-size: 12px;
+}
+
+.activityDetails {
+    line-height: 1;
+}

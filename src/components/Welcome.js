@@ -1,15 +1,41 @@
 import React, { Component } from "react";
-// import FriendList from "./FriendsList";
+import Profile from "./Profile";
+import FriendList from "./FriendsList";
+import "./Welcome.css";
+import { Link } from "react-router-dom";
+import { fetchAndHandleProfile } from "../actions/profiles";
+import { connect } from "react-redux";
 
 class Welcome extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+    this.props.fetchAndHandleProfile("5b47b3d9b971b10004e7c9b7");
+  }
   render() {
+    if (!this.props.profile) {
+      return <div>loading</div>;
+    }
     return (
       <div>
-        <p>Welcome User</p>
-        {/* <FriendList /> */}
+        <h1 className="welcome">Welcome, {this.props.profile.username}</h1>
+        <FriendList />
       </div>
     );
   }
 }
 
-export default Welcome;
+const mapStateToProps = ({ profiles, loading }) => ({
+  profile: profiles.profile
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchAndHandleProfile: id => dispatch(fetchAndHandleProfile(id))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Welcome);

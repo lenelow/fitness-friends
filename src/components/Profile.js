@@ -1,30 +1,41 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
+import Profile from "./Profile";
+import FriendList from "./FriendsList";
+import "./Welcome.css";
+import { Link } from "react-router-dom";
+import { fetchAndHandleProfile } from "../actions/profiles";
+import { connect } from "react-redux";
 
-class Profile extends Component {
-  constructor (props) {
-    super(props)
-
-    this.state = {
-      user: 'Jimmy Byess',
-      image: 'http://img2.timeinc.net/people/i/2015/cbb/blog/150518/jimmy-fallon-02-300x400.jpg',
-      bio: 'I love to make bread and go running',
-      preferences: ['running', 'biking', 'weightlifting']
-    }
+class Welcome extends Component {
+  constructor(props) {
+    super(props);
   }
-  render () {
+
+  componentDidMount() {
+    this.props.fetchAndHandleProfile("5b47b3d9b971b10004e7c9b7");
+  }
+  render() {
+    if (!this.props.profile) {
+      return <div>loading</div>;
+    }
     return (
       <div>
-        <h1>{this.state.user}'s Profile</h1>
-        <img src={this.state.image} />
-        <p>{this.state.bio}</p>
-        <ul>
-          <li>{this.state.preferences[0]}</li>
-          <li>{this.state.preferences[1]}</li>
-          <li>{this.state.preferences[2]}</li>
-        </ul>
+        <h1 className="welcome">Welcome</h1>
+        <FriendList />
       </div>
-    )
+    );
   }
 }
 
-export default Profile
+const mapStateToProps = ({ profiles, loading }) => ({
+  profile: profiles.profile
+});
+
+const mapDispatchToProps = dispatch => ({
+  fetchAndHandleProfile: id => dispatch(fetchAndHandleProfile(id))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Welcome);
