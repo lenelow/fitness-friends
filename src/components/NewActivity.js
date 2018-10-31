@@ -5,24 +5,21 @@ import { handleCreateActivity } from "../actions/activities";
 import { connect } from "react-redux";
 
 class NewActivity extends Component {
-  constructor() {
-    super();
-  }
- 
   onSubmit = activity => {
-    this.props.onSubmit(activity)
-    this.props.history.push("/")
-  }
+    this.props.onSubmit(activity);
+    this.props.history.push("/");
+  };
 
   render() {
-    return (
-      <ActivityForm title='Add Activity' onSubmit={this.onSubmit}/>
-    );
+    return <ActivityForm title="Add Activity" onSubmit={this.onSubmit} />;
   }
 }
 
 const mapDispatchToProps = dispatch => ({
-  onSubmit: (activity) => dispatch(handleCreateActivity(activity))
-})
+  onSubmit: activity => dispatch(handleCreateActivity(activity))
+});
 
-export default connect(undefined, mapDispatchToProps)(NewActivity);
+export default connect(
+  undefined,
+  mapDispatchToProps
+)(NewActivity);

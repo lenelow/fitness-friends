@@ -4,9 +4,6 @@ import { fetchAndHandleActivities } from "../actions/activities";
 import { connect } from "react-redux";
 
 class ActivityList extends Component {
-  constructor() {
-    super();
-  }
   componentDidMount() {
     this.props.fetchAndHandleActivities();
   }
@@ -15,7 +12,7 @@ class ActivityList extends Component {
     let table = this.props.activities.map(activity => {
       return (
         <section key={activity._id}>
-          <table class="activityTable">
+          <table className="activityTable">
             <thead>
               <tr>
                 <th>Activity</th>
