@@ -10,10 +10,6 @@ import Header from "./Header";
 import { BrowserRouter as Router } from "react-router-dom";
 
 class App extends Component {
-  // constructor() {
-  //   super();
-  // }
-
   render() {
     return (
       <Router>

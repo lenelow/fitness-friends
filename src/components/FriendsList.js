@@ -5,10 +5,6 @@ import { connect } from "react-redux";
 import { fetchAndHandleProfiles } from "../actions/profiles";
 
 class FriendsList extends Component {
-  // constructor() {
-  //   super();
-  // }
-
   componentDidMount() {
     this.props.fetchAndHandleProfiles();
   }

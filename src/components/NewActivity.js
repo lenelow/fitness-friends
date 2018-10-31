@@ -5,10 +5,6 @@ import { handleCreateActivity } from "../actions/activities";
 import { connect } from "react-redux";
 
 class NewActivity extends Component {
-  // constructor() {
-  //   super();
-  // }
-
   onSubmit = activity => {
     this.props.onSubmit(activity);
     this.props.history.push("/");
