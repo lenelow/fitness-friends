@@ -1,20 +1,14 @@
 import React, { Component } from "react";
-// import Profile from "./Profile";
 import NewActivity from "./NewActivity";
-
 import ActivityList from "./ActivityList";
-import "./Welcome.css";
+import "./Profile.css";
 import { Link } from "react-router-dom";
 import { fetchAndHandleProfile } from "../actions/profiles";
 import { connect } from "react-redux";
 
-class Welcome extends Component {
-  // constructor(props) {
-  //   super(props);
-  // }
-
+class Profile extends Component {
   componentDidMount() {
-    this.props.fetchAndHandleProfile("5b47b3d9b971b10004e7c9b7");
+    this.props.fetchAndHandleProfile(this.props.match.params.id);
   }
   render() {
     let prefList = "";
@@ -27,10 +21,6 @@ class Welcome extends Component {
       return <div>loading</div>;
     }
     return (
-      // <div>
-      //   <h1 className="welcome">Welcome</h1>
-      //   <FriendList />
-      // </div>
       <div>
         <h1 className="usersName">
           {this.props.profile.username}
@@ -77,4 +67,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(Welcome);
+)(Profile);
